@@ -2,6 +2,8 @@
 
 A collection of practical examples of using service workers
 
+Live Demo: https://simple-pwa-wcouwbjvdp.now.sh/
+
 #### Open your Developer Tools console and network tabs to view what each service worker is doing!
 
 
