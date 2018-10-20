@@ -1,0 +1,21 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.user__list {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.user {
+  margin: 10px 5px;
+  border: 1px solid #e1e1e1;
+
+  max-width: calc(20% - 15px);
+}

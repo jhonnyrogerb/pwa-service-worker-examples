@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple PWA</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="bmd-layout-container bmd-drawer-f-r bmd-drawer-overlay">
+        <header class="bmd-layout-header">
+            <div class="navbar navbar-light bg-faded">
+                <button class="navbar-toggler" type="button" data-toggle="drawer" data-target="#dw-s1">
+                    <span class="sr-only">Toggle drawer</span>
+                    <i class="material-icons">menu</i>
+                </button>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">Users</li>
+                </ul>
+            </div>
+        </header>
+        <div id="dw-s1" class="bmd-layout-drawer bg-faded">
+            <header>
+                <a class="navbar-brand">Users</a>
+            </header>
+        </div>
+        <main class="bmd-layout-content">
+            <div class="container">
+                <div class="row" id="user-list"></div>
+                <div class="row">
+                    <div class="col-md-12" style="margin:40px 0">
+                        <button class="btn btn-primary btn-lg btn-block" id="btn-load-more">Load More</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="application/javascript" src="/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
+    <script>
+        //Verifica se o navegador oferece suporte a service worker
+        if ('serviceWorker' in navigator) {
+            //registra o service worker
+            navigator.serviceWorker.register("/pages/offline-first-update/sw.js")
+                .then(registration => {
+                    console.log("Service Worker registred", registration)
+                })
+                .catch(err => {
+                    console.error("Failed to register Service Worker", err)
+                })
+        }
+    </script>
+</body>
+
+</html>
