@@ -14,6 +14,7 @@ var CACHE_FILES = [
     'https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js'
 ]
 
+
 self.addEventListener('install', event => {
     console.log('[ServiceWorker] Installed');
 
