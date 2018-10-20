@@ -7,4 +7,4 @@ A collection of practical examples of using service workers
 
 - [App Shell Cache](https://simple-pwa-wcouwbjvdp.now.sh/pages/app-shell/) - It precaches the app shell resources in a versioned cache. An application shell (or app shell) refers to the local resources that your web app needs to load the skeleton of your user interface (UI) [Source](https://google-developer-training.gitbooks.io/progressive-web-apps-ilt-concepts/content/docs/introduction-to-progressive-web-app-architectures.html).
 
-- [Offline First](https://simple-pwa-wcouwbjvdp.now.sh/pages/offline-first/) - 
+- [Offline First](https://simple-pwa-wcouwbjvdp.now.sh/pages/offline-first/) - It precaches the app shell resources in a versioned cache, and maintains another cache that's populated at runtime as additional resources are requested. If a resource is cached and available offline, return it first before trying to download it from the server. If it isn’t in the cache already, download it and cache it for future usage [Source](https://developer.mozilla.org/en-US/docs/Web/Apps/Progressive/Offline_Service_workers#Offline_First).
